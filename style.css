@@ -1,0 +1,254 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+:root {
+  --Tomato: hsl(4, 100%, 67%);
+  --Dark-Slate-Grey: hsl(234, 29%, 20%);
+  --Charcoal-Grey: hsl(235, 18%, 26%);
+  --Grey: hsl(231, 7%, 60%);
+  --White: hsl(0, 0%, 100%);
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  box-sizing: border-box;
+  color: var(--Dark-Slate-Grey);
+
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background-color: var(--Charcoal-Grey);
+}
+
+/* NEWSLETTER BOX */
+.newsletter {
+  background-color: var(--White);
+  padding: 2.4rem;
+  border-radius: 21px;
+  max-width: 85rem;
+
+  display: grid;
+  grid-template-columns: 2fr 1.6fr;
+  align-items: center;
+  justify-items: center;
+  gap: 1.6rem;
+}
+
+/* NEWSLETTER CONTENT */
+.newsletter__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+  max-width: 36rem;
+}
+
+.heading-primary {
+  font-size: 5.4rem;
+}
+
+.newsletter__description {
+  font-size: 1.6rem;
+  line-height: 1.6;
+}
+
+.newsletter__features {
+  list-style: none;
+  font-size: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-bottom: 1.2rem;
+}
+
+.newsletter__features li p {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.newsletter__features li p img {
+  vertical-align: middle;
+}
+
+/* FORM */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+.form__info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.form__error-message {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: -0.75rem;
+  color: var(--Tomato);
+}
+
+.form__description {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: -0.75rem;
+}
+
+.form__mail-box {
+  font-family: inherit;
+  font-size: 1.6rem;
+  color: var(--Dark-Slate-Grey);
+  padding: 1.2rem 1.6rem;
+  border-radius: 7px;
+  border: 1px solid var(--Charcoal-Grey);
+}
+
+.form__mail-box:focus {
+  outline: 1px solid var(--Tomato);
+  border: 1px solid transparent;
+}
+
+.form__submit-btn {
+  font-family: inherit;
+  font-size: 1.6rem;
+  padding: 1.2rem 1.6rem;
+  border-radius: 7px;
+  border: none;
+  background-color: var(--Dark-Slate-Grey);
+  cursor: pointer;
+  color: var(--White);
+  transition: all 0.3s;
+}
+
+.form__submit-btn:hover,
+.form__submit-btn:active {
+  background-color: var(--Tomato);
+  box-shadow: 0 1.2rem 2.4rem rgba(255, 98, 87, 0.2);
+}
+
+/* NEWSLETTER IMAGE*/
+.newsletter-cover {
+  width: 100%;
+}
+
+/* .newsletter__image {
+  background-image: url(assets/images/illustration-sign-up-desktop.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+} */
+
+/* SUCCESS */
+.success {
+  background-color: var(--White);
+  padding: 4.8rem;
+  max-width: 50rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.8rem;
+  border-radius: 21px;
+}
+
+.success.animate {
+  animation: moveUp 1s ease-out;
+}
+
+.heading-secondary {
+  font-size: 5.6rem;
+  line-height: 1.1;
+}
+
+.success__description {
+  font-size: 1.6rem;
+  line-height: 1.6;
+}
+
+.email {
+  font-weight: 700;
+}
+
+/* HIDE THE ELEMENT */
+.hidden {
+  display: none;
+}
+
+/* ANIMATION FOR SUCCESS BOX*/
+@keyframes moveUp {
+  0% {
+    transform: translateY(2rem);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(-20rem);
+    opacity: 0;
+  }
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 44em) {
+  html {
+    font-size: 56.25%;
+  }
+
+  body {
+    align-items: start;
+  }
+
+  .newsletter {
+    grid-template-columns: 1fr;
+    padding: 0;
+  }
+
+  .newsletter__content {
+    grid-row: 2/3;
+    padding-top: 1.2rem;
+    padding-bottom: 3.2rem;
+  }
+
+  .form__mail-box {
+    padding: 1.8rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .form__submit-btn {
+    padding: 1.8rem;
+  }
+
+  .newsletter__features {
+    gap: 2.4rem;
+    margin-bottom: 2.4rem;
+  }
+
+  .success {
+    height: 100vh;
+    justify-content: center;
+    border-radius: 0;
+  }
+
+  .success__icon {
+    margin-top: 9.6rem;
+  }
+
+  .heading-secondary {
+    font-size: 4.2rem;
+  }
+
+  .btn--success {
+    margin-top: auto;
+  }
+}
